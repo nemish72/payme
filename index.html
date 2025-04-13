@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>₹101 Ka Crazy Surprise!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff3e0;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #333;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 2.2em;
+      color: #d84315;
+    }
+    p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    img {
+      width: 220px;
+      height: 220px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1.1em;
+      border-radius: 30px;
+      text-decoration: none;
+      margin: 10px;
+    }
+    .pay-btn {
+      background: #388e3c;
+      color: white;
+    }
+    .share-btn {
+      background: #1976d2;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>₹101 Do... Aur Phir Jo Hoga, Woh Dekhna Banta Hai! 😲😂</h1>
+    <p>This is not any donation, and definitely not a scam.<br><strong>It's a ₹101 challenge</strong> that's going viral!<br>
+    Scan the code, pay ₹101, and be ready for a crazy surprise.</p>
+    
+    <img src="your-qr-code.png" alt="Scan to Pay QR Code" />
+    
+    <a href="#" class="btn pay-btn">Pay ₹101 Now</a>
+    
+    <p style="margin-top: 20px;">👇 Share with your wildest friends... they won’t believe this 😜</p>
+    <a class="btn share-btn" href="https://api.whatsapp.com/send?text=😂 Try this ₹101 challenge and see what happens! 👉 yourlandingpage.com" target="_blank">📤 Share on WhatsApp</a>
+  </div>
+  
+  <div style="margin-top: 40px; text-align: left; background: #fce4ec; padding: 20px; border-radius: 12px;">
+    <h2 style="text-align:center; color:#d81b60;">Already Paid ₹101?</h2>
+    <p>Enter your UPI Transaction ID and WhatsApp number below so we can verify and send your surprise 🎁</p>
+  
+    <form id="upiForm" onsubmit="return submitForm()" style="max-width: 400px; margin:auto;">
+      <label for="upi">UPI Transaction ID:</label><br />
+      <input type="text" id="upi" name="upi" required style="width:100%; padding:8px; margin:8px 0;"><br />
+  
+      <label for="whatsapp">WhatsApp Number:</label><br />
+      <input type="tel" id="whatsapp" name="whatsapp" pattern="[0-9]{10}" required style="width:100%; padding:8px; margin:8px 0;"><br />
+  
+      <button type="submit" style="background:#d81b60; color:white; padding:10px 20px; border:none; border-radius: 25px; font-size:1em;">Submit</button>
+    </form>
+  
+    <p id="confirmation" style="text-align:center; color: green; font-weight:bold; margin-top: 15px;"></p>
+  </div>
+
+  <script>
+    function submitForm() {
+      const upi = document.getElementById('upi').value.trim();
+      const whatsapp = document.getElementById('whatsapp').value.trim();
+  
+      if (upi.length < 8 || whatsapp.length != 10) {
+        alert("Please enter valid details.");
+        return false;
+      }
+  
+      // You can add your own logic here like sending this to your WhatsApp or Google Form backend
+      document.getElementById('confirmation').innerText = "Thanks! We’ll verify and send you the surprise shortly! 🎉";
+  
+      // Optional: Open WhatsApp chat with their number or with you
+      window.open(`https://wa.me/91YOURNUMBER?text=Hey!%20I%20just%20paid%20₹101.%20My%20UPI%20TXN%20ID:%20${upi}%20and%20my%20WhatsApp:%20${whatsapp}`, '_blank');
+  
+      return false;
+    }
+  </script>
+</body>
+</html>
